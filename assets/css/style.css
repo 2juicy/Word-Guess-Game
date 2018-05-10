@@ -36,8 +36,9 @@ hr{
     padding: 20px;
 }
 h1, h2{
-    font-size: 40px;
+    font-size: 42px;
     text-align: center;
+    color: #f99e1a;
 }
 p{
     font-size: 28px;
@@ -45,6 +46,7 @@ p{
 }
 #currentWord{
     font-size: 36px;
+    color: #f99e1a;
 }
 @media (max-width: 960px){
     .container{

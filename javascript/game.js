@@ -1,4 +1,4 @@
-//Variable list
+//global variable list
 var lives = 12;
 var wins = 0;
 var loses = 0;
@@ -16,7 +16,7 @@ function randomWord(){
     letters = answer.split('');
 }
 randomWord();
-//hides word with _ function
+//hides word with '_' function
 function hideWord(){
     for (let i = 0; i < letters.length; i++){
         hiddenAnswer[i] = '_';
@@ -82,7 +82,6 @@ document.onkeyup = function(event) {
     }
 console.log(letters);
 console.log(hiddenAnswer);
-
 document.getElementById("yourGuesses").innerHTML = "Letters already guessed: " + guesses.join(' ');
 document.getElementById("yourLoses").innerHTML = "Loses: " + loses;
 document.getElementById("yourWins").innerHTML = "Wins: " + wins;

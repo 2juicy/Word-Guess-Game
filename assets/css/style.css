@@ -32,16 +32,19 @@ hr{
 }
 
 .column{
-    float: left;
+    float: center;
     width: 50%;
     box-sizing: border-box;
     padding: 20px;
 }
-h1{
+h1, h2{
     font-size: 40px;
 }
+p{
+    font-size: 28px;
+}
 #currentWord{
-    font-size: 26px;
+    font-size: 36px;
 }
 @media (max-width: 960px){
     .container{

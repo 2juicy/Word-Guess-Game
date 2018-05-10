@@ -25,14 +25,6 @@ function hideWord(){
 }
 hideWord();
 //var hidden = answer.replace(/[a-z]+/gi, '_ ');
-function didiWin() {
-    for (var i = 0; i < hiddenAnswer.length; i++) {
-        if (hiddenAnswer[i] == '_') {
-            return false;
-        }
-    }
-     return true;
-}
 //On key event function.
 document.onkeyup = function(event) {
     var userGuess = event.key;
@@ -44,6 +36,15 @@ document.onkeyup = function(event) {
             }
         }
         document.getElementById('currentWord').innerHTML = hiddenAnswer.join(' ');
+    }
+    //Win condition?
+    function didiWin() {
+        for (var i = 0; i < hiddenAnswer.length; i++) {
+            if (hiddenAnswer[i] === '_') {
+                return false;
+            }
+        }
+        return true;
     }
     //if same letter is chosen
     for (let i = 0; i < guesses.length; i++) {
@@ -70,11 +71,20 @@ document.onkeyup = function(event) {
             hideWord();
         }
     }}
-
+    didiWin();
+    if (didiWin() === true){
+        wins++;
+        lives = 12;
+        guesses = [''];
+        hiddenAnswer = [''];
+        randomWord();
+        hideWord();
+    }
 
 console.log(userGuess);
 console.log(answer);
 console.log(letters);
+console.log(hiddenAnswer);
 
 document.getElementById("yourGuesses").innerHTML = "Letters already guessed: " + guesses.join(' ');
 document.getElementById("yourLoses").innerHTML = "Loses: " + loses;

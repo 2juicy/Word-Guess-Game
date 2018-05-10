@@ -37,7 +37,16 @@ document.onkeyup = function(event) {
         }
         document.getElementById('currentWord').innerHTML = hiddenAnswer.join(' ');
     }
-    //Win condition?
+    //life remover
+    function removeLife(){
+        for (let i = 0; i < letters.length; i++) {
+            if (letters[i] === userGuess){
+                return false;
+            }
+        }
+        return true;
+    }
+    //Win condition!
     function didiWin() {
         for (var i = 0; i < hiddenAnswer.length; i++) {
             if (hiddenAnswer[i] === '_') {
@@ -55,14 +64,15 @@ document.onkeyup = function(event) {
     for (var i = 0; i < alphabet.length; i++) {   
         if (alphabet[i] === userGuess) {
         //if letter does not match   
-        if (letters.forEach !== userGuess){
+        removeLife();
+        if (removeLife() === true){
             lives--;
         }
         //if guess matches a letter in word
         checkKey();
         //pushes already used letters into an array to track lives, reset game when out of lives.
         guesses.push(userGuess)
-        if (guesses.length === 13){
+        if (lives === 0){
             loses++;
             lives = 12;
             guesses = [''];

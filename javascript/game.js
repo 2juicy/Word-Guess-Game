@@ -3,7 +3,7 @@ var lives = 12;
 var wins = 0;
 var loses = 0;
 var alphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
-var words = ['doomfist', 'genji', 'tracer', 'hanzo', 'pharah', 'reaper', 'sombra', 'mercy', 'zenyatta', 'offense', 'defense', 'support']
+var words = ['doomfist', 'genji', 'tracer', 'hanzo', 'pharah', 'reaper', 'sombra', 'mercy', 'zenyatta', 'offense', 'defense', 'support', 'illios', 'hanamura', 'numbani', 'hollywood', 'dorado', 'oasis']
 var answer = '';
 var hiddenAnswer = [''];
 var guesses = [''];
@@ -80,9 +80,6 @@ document.onkeyup = function(event) {
         randomWord();
         hideWord();
     }
-
-console.log(userGuess);
-console.log(answer);
 console.log(letters);
 console.log(hiddenAnswer);
 

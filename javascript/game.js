@@ -76,6 +76,7 @@ document.onkeyup = function(event) {
         guesses.push(userGuess)
         if (lives === 0){
             loses++;
+            var targetDiv = document.getElementById("lastWord");      targetDiv.textContent = 'Previous Word: ' + answer;
             randomWord();
             hideWord();
         }
@@ -83,11 +84,14 @@ document.onkeyup = function(event) {
         didiWin();
             if (didiWin() === true){
                 wins++;
+                var targetDiv = document.getElementById("lastWord");      targetDiv.textContent = 'Previous Word: ' + answer;
                 randomWord();
                 hideWord();
         }
 console.log(letters);
 console.log(hiddenAnswer);
+console.log(answer);
+
 document.getElementById("yourGuesses").innerHTML = "Letters already guessed: " + guesses.join(' ');
 document.getElementById("yourLoses").innerHTML = "Loses: " + loses;
 document.getElementById("yourWins").innerHTML = "Wins: " + wins;

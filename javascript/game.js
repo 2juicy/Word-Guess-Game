@@ -11,8 +11,10 @@ var letters = [''];
 var correctLetters = [''];
 //Generates a random word function then splits into single letters.
 function randomWord(){
-    let randomWord = (Math.floor(Math.random() * words.length));
-    answer = words[randomWord];
+    lives = 12;
+    guesses = [''];
+    hiddenAnswer = [''];
+    answer = words[Math.floor(Math.random() * words.length)];
     letters = answer.split('');
 }
 randomWord();
@@ -24,7 +26,7 @@ function hideWord(){
     document.getElementById('currentWord').innerHTML = hiddenAnswer.join(' ');
 }
 hideWord();
-//var hidden = answer.replace(/[a-z]+/gi, '_ ');
+//var hidden = answer.replace(/[a-z], '_ ');
 //On key event function.
 document.onkeyup = function(event) {
     var userGuess = event.key;
@@ -74,26 +76,20 @@ document.onkeyup = function(event) {
         guesses.push(userGuess)
         if (lives === 0){
             loses++;
-            lives = 12;
-            guesses = [''];
-            hiddenAnswer = [''];
             randomWord();
             hideWord();
         }
-    }}
-    didiWin();
-    if (didiWin() === true){
-        wins++;
-        lives = 12;
-        guesses = [''];
-        hiddenAnswer = [''];
-        randomWord();
-        hideWord();
-    }
+        }}
+        didiWin();
+            if (didiWin() === true){
+                wins++;
+                randomWord();
+                hideWord();
+        }
 console.log(letters);
 console.log(hiddenAnswer);
 document.getElementById("yourGuesses").innerHTML = "Letters already guessed: " + guesses.join(' ');
 document.getElementById("yourLoses").innerHTML = "Loses: " + loses;
 document.getElementById("yourWins").innerHTML = "Wins: " + wins;
 document.getElementById("yourLives").innerHTML = "Number of guesses remaining: " + lives;
-}   
+}

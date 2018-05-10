@@ -16,11 +16,6 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
-img{
-    float:right;
-    width: auto;
-    height: 270px;
-}
 hr{
     display: block;
     height: 1px;

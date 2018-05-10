@@ -48,6 +48,10 @@ p{
     font-size: 36px;
     color: #f99e1a;
 }
+#lastWord{
+    font-size: 32px;
+    color: #f99e1a;
+}
 @media (max-width: 960px){
     .container{
         width: auto;

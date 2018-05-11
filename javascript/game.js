@@ -76,7 +76,8 @@ document.onkeyup = function(event) {
         guesses.push(userGuess)
         if (lives === 0){
             loses++;
-            var targetDiv = document.getElementById("lastWord");      targetDiv.textContent = 'Previous Word: ' + answer;
+            var targetDiv = document.getElementById("lastWord");      
+            targetDiv.textContent = 'Previous Word: ' + answer;
             randomWord();
             hideWord();
         }
@@ -84,7 +85,8 @@ document.onkeyup = function(event) {
         didiWin();
             if (didiWin() === true){
                 wins++;
-                var targetDiv = document.getElementById("lastWord");      targetDiv.textContent = 'Previous Word: ' + answer;
+                var targetDiv = document.getElementById("lastWord");
+                targetDiv.textContent = 'Previous Word: ' + answer;
                 randomWord();
                 hideWord();
         }

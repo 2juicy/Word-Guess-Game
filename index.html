@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<video autoplay muted loop id="myVideo">
+  <source src="images/overwatchmov.mp4" type="video/mp4">
+</video>
     <h1>Overwatch Word Game</h1>
 <hr>
     <p>Press any letter key to get started!</p>
@@ -17,7 +20,9 @@
         <p><span id=yourLoses>Loses: </span></p>
         <p><span id=yourLives>Number of Guesses Remaining: 12</span></p>
         <p><span id=yourGuesses>Letters already guessed: </span></p>
+    </div>
 <br>
+    <div class="column">
         <h2>Current Word</h2>
         <p><span id=currentWord></span></p>
         <p> All words will be about Overwatch characters, their role, or maps!</p>

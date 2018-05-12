@@ -94,8 +94,8 @@ console.log(letters);
 console.log(hiddenAnswer);
 console.log(answer);
 
-document.getElementById("yourGuesses").innerHTML = "Letters already guessed: " + guesses.join(' ');
-document.getElementById("yourLoses").innerHTML = "Loses: " + loses;
-document.getElementById("yourWins").innerHTML = "Wins: " + wins;
-document.getElementById("yourLives").innerHTML = "Number of guesses remaining: " + lives;
+document.getElementById("yourGuesses").innerHTML = guesses.join(' ');
+document.getElementById("yourLoses").innerHTML = loses;
+document.getElementById("yourWins").innerHTML = wins;
+document.getElementById("yourLives").innerHTML = lives;
 }
